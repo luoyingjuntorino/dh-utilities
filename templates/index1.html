@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>温度监测</title>
+    {{ bootstrap.load_css() }}  <!-- 加载 Bootstrap 样式 -->
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">温度监测</h1>
+        <form method="POST" class="mt-4">
+            <div class="form-group">
+                <label for="temperature">当前温度：</label>
+                <input type="number" step="0.01" class="form-control" id="temperature" name="temperature" placeholder="请输入温度">
+            </div>
+            <button type="submit" class="btn btn-primary">提交</button>
+        </form>
+        {% if temperature %}
+        <div class="mt-4">
+            <h3>温度结果：</h3>
+            <p>当前温度：{{ temperature }}</p>
+            <p>温度状态：{{ message }}</p>
+        </div>
+        {% endif %}
+    </div>
+    {{ bootstrap.load_js() }}  <!-- 加载 Bootstrap JavaScript -->
+</body>
+</html>

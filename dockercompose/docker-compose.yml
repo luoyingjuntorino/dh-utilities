@@ -1,0 +1,13 @@
+version: '3'
+services:
+  webapp:
+    image: nginx:latest
+    container_name: my_custom_webapp
+    ports:
+      - "8080:80"
+
+  database:
+    image: postgres:latest
+    container_name: custom_database
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword

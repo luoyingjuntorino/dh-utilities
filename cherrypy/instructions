@@ -1,0 +1,5 @@
+docker build -t my-python-app .
+
+docker run -e TZ=Europe/Rome -p 8000:8000 --name cherrypy my-python-app
+
+python:3.9-alpine

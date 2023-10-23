@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>InfluxDB Data Extraction</title>
+</head>
+<body>
+    <h1>InfluxDB Data Extraction</h1>
+    <form method="POST" action="/">
+        <label for="bucket">Bucket:</label>
+        <input type="text" id="bucket" name="bucket" required><br><br>
+        <label for="start_time">Start Time:</label>
+        <input type="text" id="start_time" name="start_time" required><br><br>
+        <label for="stop_time">Stop Time:</label>
+        <input type="text" id="stop_time" name="stop_time" required><br><br>
+        <label for="query_field">Query Field:</label>
+        <input type="text" id="query_field" name="query_field" required><br><br>
+        <input type="submit" value="Export to CSV">
+    </form>
+
+    {% if exported %}
+        <p>Data exported successfully. <a href="exported.csv">Download CSV</a></p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,4 @@
+docker build -t flask_test .
+
+docker run -e TZ=Europe/Rome -p 5000:5000 --name flask_test flask_test
+
